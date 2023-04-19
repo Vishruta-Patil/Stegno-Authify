@@ -81,7 +81,8 @@ var encode = function () {
   ctx.putImageData(imgData, 0, 0);
 
   // view the new image
-  alert("Done! When the image appears, save and share it with someone.");
+  // alert("Done! When the image appears, save and share it with someone.");
+  swal("", "Signed In, Save the Image to Login", "success");
 
   output.src = canvas.toDataURL();
 };
@@ -89,7 +90,7 @@ var encode = function () {
 // decode the image and display the contents if there is anything
 var decode = function () {
   var password = document.getElementById("password2").value;
-  var passwordFail = "Password is incorrect or there is nothing here.";
+  var passwordFail = "Password is incorrect, Try Again";
 
   // decode the message with the supplied password
   var ctx = document.getElementById("canvas").getContext("2d");
@@ -108,7 +109,8 @@ var decode = function () {
     document.getElementById("reveal").style.display = "none";
 
     if (password.length > 0) {
-      alert(passwordFail);
+      // alert(passwordFail);
+      swal("", passwordFail, "warning");
     }
   }
 
@@ -122,7 +124,8 @@ var decode = function () {
       try {
         obj.text = sjcl.decrypt(password, message);
       } catch (e) {
-        alert(passwordFail);
+        // alert(passwordFail);
+        swal("", passwordFail, "warning");
       }
     }
 

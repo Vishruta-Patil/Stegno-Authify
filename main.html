@@ -9,6 +9,7 @@
     <script src='./script/main.js' type='text/javascript'></script>
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/description.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -55,13 +56,13 @@
                 <textarea id='message' class='message' maxlength='1000'
                     placeholder='Type hidden message'></textarea>
                 <input type='password' id='password' class='password'
-                    placeholder='Password (optional)' />
+                    placeholder='Password' />
                 <button id='encode' class='submit'>Hide message</button>
             </div>
             <div class='right'>
                 <input type='password' id='password2' class='password'
                     placeholder='Password' />
-                <button id='decode' class='submit'>Reveal message</button>
+                <button id='decode' class='submit'>Login</button>
             </div>
         </div>
     </div>
